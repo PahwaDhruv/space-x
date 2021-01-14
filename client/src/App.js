@@ -7,7 +7,7 @@ import Footer from './components/footer/Footer';
 
 const App = (props) => {
     return (
-        <div className="container-fluid" style={{backgroundColor : '#f1f1f1'}}>
+        <div>
             <Navbar></Navbar>
                 <Switch>
                     {

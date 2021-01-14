@@ -32,6 +32,7 @@ class ProgramList extends Component{
 
     render(){
         return(
+            <div className="container-fluid" style={{backgroundColor : '#f1f1f1'}}>
             <div className="row">
                 <div className="col-sm-12 col-md-3">
                     <h3>Filters</h3>
@@ -47,6 +48,7 @@ class ProgramList extends Component{
                     </div>
                     
                 </div>
+            </div>
             </div>
         )
     }
