@@ -30,17 +30,6 @@ const PORT = process.env.PORT || 5000;
 
 app.use(compression());
 
-<<<<<<< HEAD
-
-=======
-// if(process.env.NODE_ENV ===  'production'){
-//     app.use(express.static('public'));
-//     app.get('*', (req,res) => {
-//         res.sendFile(path.resolve(__dirname, 'public', 'bundle.js'))
-//     })
-// }
->>>>>>> 457437ccfeb52caa464388895f2073c664dcc394
-
 app.use(express.static('public'));
 
 app.get('*', (req, res) => {
