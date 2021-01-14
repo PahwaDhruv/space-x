@@ -77,15 +77,12 @@ app.get('*', (req, res) => {
         });   
 });
 
-<<<<<<< HEAD
 if(process.env.NODE_ENV ===  'production'){
     app.use(express.static('public'));
     app.get('*', (req,res) => {
         res.sendFile(path.resolve(__dirname, 'public', 'bundle.js'))
     })
 }
-=======
->>>>>>> 457437ccfeb52caa464388895f2073c664dcc394
 app.listen(PORT, () => {
     console.log(`App Started on port ${PORT}`);
 }) 
