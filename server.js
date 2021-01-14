@@ -1,37 +1,36 @@
-require('@babel/polyfill');
-// import express from 'express';
-const express = require('express');
-// import React from 'react';
-const React = require('react');
-// import { matchPath, StaticRouter } from 'react-router-dom';
-const matchPath = require('react-router-dom').matchPath;
-const StaticRouter = require('react-router-dom').StaticRouter;
-// import routes from './routes';
-const routes = require('./routes').default;
-// import {createStore, applyMiddleware} from 'redux';
-const createStore = require('redux').createStore;
-const applyMiddleware = require('redux').applyMiddleware;
-// import {Provider} from 'react-redux';
-const Provider = require('react-redux').Provider;
-// import thunk from 'redux-thunk';
-const thunk = require('redux-thunk').default;
-// import serialize from 'serialize-javascript';
-const serialize = require('serialize-javascript').default;
-// import {renderToString}  from 'react-dom/server';
-const renderToString = require('react-dom/server').renderToString;
-// import App from'./client/src/App';
-const App = require('./client/src/App').default;
-// import rootReducer from './client/reducers/rootReducer';
-const rootReducer = require('./client/reducers/rootReducer').default;
-// import compression from 'compression';
-const compression = require('compression').default;
-// import path from 'path';
-const path = require('path').default;
+import '@babel/polyfill';
+import express from 'express';
+import React from 'react';
+import { matchPath, StaticRouter } from 'react-router-dom';
+import routes from './routes';
+import {createStore, applyMiddleware} from 'redux';
+import {Provider} from 'react-redux';
+import thunk from 'redux-thunk';
+import serialize from 'serialize-javascript';
+import {renderToString}  from 'react-dom/server';
+import App from'./client/src/App';
+import rootReducer from './client/reducers/rootReducer';
+import compression from 'compression';
+import path from 'path';
 
+// require('@babel/polyfill');
+// const express = require('express');
+// const React = require('react');
+// const matchPath = require('react-router-dom').matchPath;
+// const StaticRouter = require('react-router-dom').StaticRouter;
+// const routes = require('./routes').default;
+// const createStore = require('redux').createStore;
+// const applyMiddleware = require('redux').applyMiddleware;
+// const Provider = require('react-redux').Provider;
+// const thunk = require('redux-thunk').default;
+// const serialize = require('serialize-javascript').default;
+// const renderToString = require('react-dom/server').renderToString;
+// const App = require('./client/src/App').default;
+// const path = require('path').default;
+// const compression = require('compression');
+// const rootReducer = require('./client/reducers/rootReducer').default;
 
 const app = express();
-
-const PORT = process.env.PORT || 5000;
 
 app.use(compression());
 
@@ -71,12 +70,14 @@ app.get('*', (req, res) => {
         });   
 });
 
-if(process.env.NODE_ENV ===  'production'){
-    app.use(express.static('public'));
-    app.get('*', (req,res) => {
-        res.sendFile(path.resolve(__dirname, 'public', 'bundle.js'))
-    })
-}
+// if(process.env.NODE_ENV ===  'production'){
+//     app.use(express.static('public'));
+//     app.get('*', (req,res) => {
+//         res.sendFile(path.resolve(__dirname, 'public', 'bundle.js'))
+//     })
+// }
+
+const PORT = process.env.PORT || 5000;
 app.listen(PORT, () => {
     console.log(`App Started on port ${PORT}`);
 }) 
