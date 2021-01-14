@@ -1,4 +1,4 @@
-require('babel/polyfill');
+require('@babel/polyfill');
 // import express from 'express';
 const express = require('express');
 // import React from 'react';
