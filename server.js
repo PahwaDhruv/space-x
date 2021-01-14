@@ -1,27 +1,27 @@
-import '@babel/polyfill';
-import express from 'express';
-// const express = require('express');
-import React from 'react';
-// const React = require('react');
+require('@babel/polyfill');
+// import express from 'express';
+const express = require('express');
+// import React from 'react';
+const React = require('react');
 import { matchPath, StaticRouter } from 'react-router-dom';
-import routes from './routes';
-// const routes = require('./routes');
+// import routes from './routes';
+const routes = require('./routes');
 import {createStore, applyMiddleware} from 'redux';
 import {Provider} from 'react-redux';
-import thunk from 'redux-thunk';
-// const thunk = require('redux-thunk');
-import serialize from 'serialize-javascript';
-// const serialize = require('serialize-javascript');
+// import thunk from 'redux-thunk';
+const thunk = require('redux-thunk');
+// import serialize from 'serialize-javascript';
+const serialize = require('serialize-javascript');
 
 import {renderToString}  from 'react-dom/server';
-import App from'./client/src/App';
-// const App = require('./client/src/App');
-import rootReducer from './client/reducers/rootReducer';
-// const rootReducer = require('./client/reducers/rootReducer');
-import compression from 'compression';
-// const compression = require('compression');
-import path from 'path';
-// const path = require('path');
+// import App from'./client/src/App';
+const App = require('./client/src/App');
+// import rootReducer from './client/reducers/rootReducer';
+const rootReducer = require('./client/reducers/rootReducer');
+// import compression from 'compression';
+const compression = require('compression');
+// import path from 'path';
+const path = require('path');
 
 
 const app = express();

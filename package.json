@@ -42,5 +42,5 @@
     "webpack-cli": "^4.2.0",
     "webpack-node-externals": "^2.5.2"
   },
-  "type" : "module"
+  "type": "commonjs"
 }
