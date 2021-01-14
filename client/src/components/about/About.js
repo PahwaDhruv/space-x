@@ -2,7 +2,7 @@ import React from 'react';
 
 const About = (props) => {
     return (
-        <div>
+        <div className="container-fluid" style={{minHeight : '500px'}}>
             <h1>Technologies Used</h1>
             <ul>
                 <li>React</li>
