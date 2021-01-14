@@ -5,12 +5,12 @@
   "main": "index.js",
   "scripts": {
     "dev": "npm-run-all --parallel dev:*",
-    "dev:server": "nodemon --watch build --exec \"node build/bundle.js\"",
+    "dev:server": "nodemon --watch build --exec \"babel-node build/bundle.js\"",
     "dev:build-server": "webpack --config webpack.server.js --watch",
     "dev:build-client": "webpack --config webpack.client.js --watch",
-    "prod:build-server" : "webpack --config webpack.server.js",
-    "prod:build-client" : "webpack --config webpack.client.js",
-    "heroku-postbuild" :  "NPM_CONFIG_PRODUCTION=false npm install && npm-run-all --parallel prod:*"
+    "prod:build-server": "webpack --config webpack.server.js",
+    "prod:build-client": "webpack --config webpack.client.js",
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install && npm-run-all --parallel prod:*"
   },
   "author": "Dhruv Pahwa",
   "license": "MIT",
@@ -33,6 +33,7 @@
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
     "@babel/preset-env": "^7.12.11",
     "@babel/preset-react": "^7.12.10",
     "babel-loader": "^8.2.2",
