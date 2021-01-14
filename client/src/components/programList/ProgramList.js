@@ -17,7 +17,7 @@ class ProgramList extends Component{
         return this.props.programs.map(program => (
              <div className="col-sm-6 col-md-6 col-lg-3 mb-5" key={program.flight_number}>
                 <div className="card">
-                    <img src={program.links.mission_patch_small}></img>
+                    <img src={program.links.mission_patch_small} alt={program.mission_name}></img>
                     <div className="card-body">
                         <h4 className="card-title text-primary">{program.mission_name} #{program.flight_number}</h4> 
                         <strong>Mission Ids: </strong>

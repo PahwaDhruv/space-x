@@ -12,7 +12,7 @@ const Navbar = () => {
         }
     ]
     return (
-        <nav className="navbar navbar-expand-sm bg-light navbar-light">
+        <div className="navbar navbar-expand-sm bg-light navbar-light">
             <NavLink to="/" className="navbar-brand"><h3>SpaceX Launch Program</h3></NavLink>
             <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
                 <span className="navbar-toggler-icon"></span>
@@ -28,7 +28,7 @@ const Navbar = () => {
                     }
                 </ul>
             </div>
-        </nav>    
+        </div>    
     )
 }
 
