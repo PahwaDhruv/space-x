@@ -39,11 +39,11 @@ class ProgramList extends Component{
                     <Sidebar />
                 </div>
                 <div className="col-sm-12 col-md-9 mt-5">
-                    <div className="row">
+                    <div>
                         {
                             this.props.isLoading ? (
                                 <Loader />
-                            ) : this.props.programs.length > 0 ? this.renderPrograms() : (<h1 className="text-center text-danger">OOPS... No Record Found</h1>)
+                            ) : this.props.programs.length > 0 ? (<div className="row">{this.renderPrograms()}</div>) : (<h1 className="text-center text-danger">OOPS... No Record Found</h1>)
                         }
                     </div>
                     

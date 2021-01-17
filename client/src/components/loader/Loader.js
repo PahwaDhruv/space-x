@@ -2,7 +2,7 @@ import React from 'react';
 
 const Loader = () => {
     return(
-        <div className="text-center mt-9">
+        <div className="text-center">
             <div className="spinner-grow text-muted"></div>
             <div className="spinner-grow text-primary"></div>
             <div className="spinner-grow text-success"></div>

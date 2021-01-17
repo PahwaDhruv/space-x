@@ -1,6 +1,10 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {NavLink} from 'react-router-dom';
 const Navbar = () => {
+    const [isNavbarOpen, setIsNavbarOpen] = useState(false);
+    const handleIsNavbarOpen = () => {
+        setIsNavbarOpen(!isNavbarOpen);
+    }
     const links = [
         {
             text : 'Home',
@@ -12,16 +16,16 @@ const Navbar = () => {
         }
     ]
     return (
-        <nav className="navbar navbar-expand-sm bg-light navbar-light">
-            <NavLink to="/" className="navbar-brand"><h3>SpaceX Launch Program</h3></NavLink>
-            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
+        <nav className="navbar navbar-expand-md bg-dark navbar-dark">
+            <NavLink to="/" className="navbar-brand">SpaceX Launch Program</NavLink>
+            <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar" aria-label="Toggle Naivgation" aria-controls="collapsibleNavbar" aria-expanded={isNavbarOpen ? true : false} onClick={handleIsNavbarOpen}>
                 <span className="navbar-toggler-icon"></span>
             </button>
-            <div className="collapse navbar-collapse" id="collapsibleNavbar">
+            <div className={`navbar-collapse ${isNavbarOpen ? '' : 'collapse'}`} id="collapsibleNavbar">
                 <ul className="navbar-nav">
                     {
                         links.map((link,index) => (
-                            <li key={index} className="nav-item">
+                            <li key={index} className="nav-item" onClick={() => setIsNavbarOpen(false)}>
                                 <NavLink to={link.value} className="nav-link">{link.text}</NavLink>
                             </li>
                         ))
