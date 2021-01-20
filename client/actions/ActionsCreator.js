@@ -8,7 +8,7 @@ export const FETCH_BY_SUCCESSFUL_LANDING = 'fetch_by_successful_landing';
 
 export const fetchPrograms = () => async dispatch =>{
     dispatch({type : IS_LOADING});
-    const res = await axios.get('https://api.spaceXdata.com/v3/launches?limit=8');
+    const res = await axios.get('https://api.spaceXdata.com/v3/launches?limit=100');
     dispatch({
         type : FETCH_PROGRAMS,
         payload : res.data
@@ -17,7 +17,7 @@ export const fetchPrograms = () => async dispatch =>{
 
 export const fetchByYear = (year) => async dispatch => {
     dispatch({type : IS_LOADING});
-    const res = await axios.get(`https://api.spaceXdata.com/v3/launches?limit=100&launch_success=true&land_success=true&launch_year=${year}`);
+    const res = await axios.get(`https://api.spaceXdata.com/v3/launches?limit=100&launch_year=${year}`);
     dispatch({
         type : FETCH_BY_YEAR,
         payload : res.data
